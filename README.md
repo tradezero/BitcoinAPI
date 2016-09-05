@@ -9,3 +9,12 @@ The API works over web socket only.  All API messages (requests and responses/no
 Before using any of the services, you must have authenticated your connection.  Authentication requires two requests:
 
 1. Request a nonce word.
+```json
+{"mt":"Authenticate","mode":"Nonce"}
+```
+
+You will receive a message containing the nonce word with the status "OK".
+
+```json
+{"status":"OK","nonce":"<base64 encoded nonce word>","mt":"Authenticate"}
+```

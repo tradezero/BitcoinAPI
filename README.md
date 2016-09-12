@@ -16,7 +16,13 @@ Notifications are asynchronous messages sent by the API in response to one of yo
 { "mt": "Notification", "type": "<the notification type>", "details": { ... } }
 ```
 
-The notification details are different depending on the notification type.
+The notification details are different depending on the notification type.  Unfortunately, the most common notification across all commands is the Error Notification.  It looks like this:
+
+```json
+{ "mt": "Notification", "type": "Error", "details": { "msg": "You shouldn't have done that." }, "tag": "abcd" }
+```
+
+As you can see, the message type is "Notification" and the notification "type" is "Error".  The details object is as simple object with a "msg" property with the details of the error.
 
 ### Authentication
 

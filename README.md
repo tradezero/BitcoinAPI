@@ -59,7 +59,7 @@ Once you are authenticated you can begin to send messages for the various servic
 
 At this time we only support orders with counter "XBT" and base "USD", but that will change in the future.
 
-The place order command takes the following attributes:
+The place order command takes the following properties:
 
 | Name       | Type       | Description       | Required |
 | ---------- | ---------- | ----------------- | -------- |
@@ -81,3 +81,9 @@ If your order is successfully placed, you will get an "OrderPlaced" notification
 "base":"USD","counter":"XBT","side":"Buy","unitPrice":61000,"quantity":100000,
 "msg":"Your order of 0.00100000 XBT @ 610.00 was placed."},"mt":"Notification","type":"OrderPlaced"}
 ```
+If there was a problem placing your order, you will receive an Error Notification (described above) with the reason.
+
+The OrderPlaced Notification detail object contains the following properties:
+
+| Name   |  Type     | Description      | Required |
+| 

@@ -42,6 +42,7 @@ The place order command takes the following attributes:
 
 | Name       | Type       | Description       | Required |
 | ---------- | ---------- | ----------------- | -------- |
+| tag        | string     | An identifier for the request.  The tag will be returned in the response that corresponds to the request. | No |
 | side       | string     | "buy" or "sell"   | Yes      |
 | counter    | string     | The counter currency (only "XBT" is valid and is default | No  |
 | counterUnit | string    | The unit of the counter.  Valid values are "Satoshi", "bXBT", "XBT", "BTC", "kXBT", "mBTC", "MXBT", "uBTC".  Note: "Satoshi" is equivalent to "bXBT" and "XBT" is equivalent to "BTC". | Yes |

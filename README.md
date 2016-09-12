@@ -43,11 +43,13 @@ The place order command takes the following attributes:
 | Name       | Type       | Description       | Required |
 | ---------- | ---------- | ----------------- | -------- |
 | side       | string     | "buy" or "sell"   | Yes      |
-| base       | string     | The base currency (only "USD" is valid and is default   | No      |
 | counter    | string     | The counter currency (only "XBT" is valid and is default | No  |
 | counterUnit | string    | The unit of the counter.  Valid values are "Satoshi", "bXBT", "XBT", "BTC", "kXBT", "mBTC", "MXBT", "uBTC".  Note: "Satoshi" is equivalent to "bXBT" and "XBT" is equivalent to "BTC". | Yes |
+| counterQuantity | integer | The amount of the counter in counterUnit units | Yes |
+| base       | string     | The base currency (only "USD" is valid and is default   | No      |
 | baseUnit   | string     | Unit of the base (only "Cents" is valid and is default) | No |
-| baseQuantity | integer | The quantity of base (meaning depends on baseQuantityType) | Yes |
+| baseQuantity | integer | The quantity of base in baseUnit units (meaning depends on baseQuantityType) | Yes |
 | baseQuantityType | string | baseQuantity semantics - "Unit" specifies the price of 1 counter, "Total" specifies the actual amount of base you want for the amount of counter specified | Yes |
+| partialFill | boolean | partial fill or all or nothing (defaults to true) | No |
 
 

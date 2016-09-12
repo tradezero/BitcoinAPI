@@ -19,7 +19,8 @@ Notifications are asynchronous messages sent by the API in response to one of yo
 The notification details are different depending on the notification type.  Unfortunately, the most common notification across all commands is the Error Notification.  It looks like this:
 
 ```json
-{ "mt": "Notification", "type": "Error", "details": { "msg": "You shouldn't have done that." }, "tag": "abcd" }
+{ "mt": "Notification", "type": "Error", "details": { "msg": "You shouldn't have done that." }, 
+"tag": "abcd" }
 ```
 
 As you can see, the message type is "Notification" and the notification "type" is "Error".  The details object is as simple object with a "msg" property with the details of the error.
@@ -76,5 +77,7 @@ The place order command takes the following attributes:
 If your order is successfully placed, you will get an "OrderPlaced" notification.  An example is below:
 
 ```json
-{"tag":"1234","details":{"status":"OK","orderId":779,"baseUnit":"Cents","counterUnit":"Satoshi","base":"USD","counter":"XBT","side":"Buy","unitPrice":61000,"quantity":100000,"msg":"Your order of 0.00100000 XBT @ 610.00 was placed."},"mt":"Notification","type":"OrderPlaced"}
+{"tag":"1234","details":{"status":"OK","orderId":779,"baseUnit":"Cents","counterUnit":"Satoshi","base":"USD",
+"counter":"XBT","side":"Buy","unitPrice":61000,"quantity":100000,
+"msg":"Your order of 0.00100000 XBT @ 610.00 was placed."},"mt":"Notification","type":"OrderPlaced"}
 ```

@@ -31,3 +31,17 @@ If your signature matches, your connection will be authenticated and you will re
 ```json
 { "status":"Authenticated", "mt":"Authenticate" }
 ```
+
+Once you are authenticated you can begin to send messages for the various services offered by the API.  Every message you send can have a "tag" property which will be given back as a "tag" property to allow you to pair a response or notification with your request.
+
+### PlaceOrder
+
+The place order command takes the following attributes:
+
+| Name       | Type       | Description       | Required |
+| ---------- | ---------- | ----------------- | -------- |
+| side       | string     | "buy" or "sell"   | Yes      |
+| base       | string     | The base currency (only "USD" is valid and is default   | No      |
+| counter    | string     | The counter currency (only "XBT" is valid and is default | No  |
+| baseUnit   | string     | Unit of the base (only "Cents" is valid and is default | No |
+| baseQuantity | integer | The quantity of base (meaning depends on baseQuantityType) | Yes |

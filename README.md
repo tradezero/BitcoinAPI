@@ -77,7 +77,7 @@ The place order command takes the following attributes:
 If your order is successfully placed, you will get an "OrderPlaced" notification.  An example is below:
 
 ```json
-{"tag":"1234","details":{"status":"OK","orderId":779,"baseUnit":"Cents","counterUnit":"Satoshi","base":"USD",
-"counter":"XBT","side":"Buy","unitPrice":61000,"quantity":100000,
+{"tag":"1234","details":{"status":"OK","orderId":779,"baseUnit":"Cents","counterUnit":"Satoshi",
+"base":"USD","counter":"XBT","side":"Buy","unitPrice":61000,"quantity":100000,
 "msg":"Your order of 0.00100000 XBT @ 610.00 was placed."},"mt":"Notification","type":"OrderPlaced"}
 ```

@@ -2,7 +2,21 @@
 
 Before using our API, you must enable API usage from within the application.  Once you provide your IP address and accept the terms you will be given a one-time secret key and the web socket URL for you to connect to.  You are responsible for protecting this key.  If you lose this key, you will have to generate a new one.
 
-The API works over web socket only.  All API messages (requests and responses/notification) contain a message type property "mt" which is of type string.
+The API works over web socket only.  
+
+### Messages
+
+All API messages contain a message type property "mt" which is of type string.  This determines the message type at a high level.  All messages sent to the API can also have a "tag" property which is an opaque value specified by you.  It can be up to 30 characters in length and it can only contain alphanumeric characters or the underscore character (spaces are not allowed).
+
+### Notifications
+
+Notifications are asynchronous messages sent by the API in response to one of your requests.  They are nothing more than a message type ("mt") of "Notification".  All notifications have the following structure:
+
+```json
+{ "mt": "Notification", "type": "<the notification type>", "details": { ... } }
+```
+
+The notification details are different depending on the notification type.
 
 ### Authentication
 
@@ -53,4 +67,8 @@ The place order command takes the following attributes:
 | baseQuantityType | string | baseQuantity semantics - "Unit" specifies the price of 1 counter, "Total" specifies the actual amount of base you want for the amount of counter specified | Yes |
 | partialFill | boolean | partial fill or all or nothing (defaults to true) | No |
 
+If your order is successfully placed, you will get an "OrderPlaced" notification.  An example is below:
 
+```json
+{"tag":"1234","details":{"status":"OK","orderId":779,"baseUnit":"Cents","counterUnit":"Satoshi","base":"USD","counter":"XBT","side":"Buy","unitPrice":61000,"quantity":100000,"msg":"Your order of 0.00100000 XBT @ 610.00 was placed."},"mt":"Notification","type":"OrderPlaced"}
+```

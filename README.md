@@ -74,16 +74,21 @@ The place order command takes the following properties:
 | baseQuantityType | string | baseQuantity semantics - "Unit" specifies the price of 1 counter, "Total" specifies the actual amount of base you want for the amount of counter specified | Yes |
 | partialFill | boolean | partial fill or all or nothing (defaults to true) | No |
 
-If your order is successfully placed, you will get an "OrderPlaced" notification.  An example is below:
+If your order is successfully placed, you will get an "PlaceOrder" notification.  An example is below:
 
 ```json
 {"tag":"1234","details":{"status":"OK","orderId":779,"baseUnit":"Cents","counterUnit":"Satoshi",
 "base":"USD","counter":"XBT","side":"Buy","unitPrice":61000,"quantity":100000,
-"msg":"Your order of 0.00100000 XBT @ 610.00 was placed."},"mt":"Notification","type":"OrderPlaced"}
+"msg":"Your order of 0.00100000 XBT @ 610.00 was placed."},"mt":"Notification","type":"PlaceOrder"}
 ```
 If there was a problem placing your order, you will receive an Error Notification (described above) with the reason.
 
-The OrderPlaced Notification detail object contains the following properties:
+The PlaceOrder Notification details object contains the following properties:
 
-| Name   |  Type     | Description      | Required |
-| 
+| Name   |  Type     | Description      |
+| ------ | --------- | ---------------- |
+| orderId | integer | The order id of your order |
+| base | string | The base currency of your order |
+| baseUnit | string | The base unit "Cents" is the only one used at this time | 
+| counter | string | The counter currency of your order |
+| counterUnit | string | The counter unit ("Satoshi" is the only one used at this time) |

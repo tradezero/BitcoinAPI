@@ -88,7 +88,10 @@ The PlaceOrder Notification details object contains the following properties:
 | Name   |  Type     | Description      |
 | ------ | --------- | ---------------- |
 | orderId | integer | The order id of your order |
+| side    | string | The side of your order |
+| unitPrice | integer | The unit price (in base currency in baseUnit units) of 1 unit of the counter currency |
 | base | string | The base currency of your order |
 | baseUnit | string | The base unit "Cents" is the only one used at this time | 
 | counter | string | The counter currency of your order |
 | counterUnit | string | The counter unit ("Satoshi" is the only one used at this time) |
+| quantity | integer | The quantity of counter currency in counterUnit units |
